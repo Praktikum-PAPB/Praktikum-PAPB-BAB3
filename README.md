@@ -2,6 +2,11 @@
 
 <img width="1080" height="1080" alt="mockup" src="https://github.com/user-attachments/assets/7b66610c-f28e-4a65-9397-90e0fef71988" />
 
+
+<img width="318" height="640" alt="hijau minimalis promosi penjualan beli 1 gratis 1 instagram post" src="https://github.com/user-attachments/assets/a0f8db7c-43da-4a06-b74e-462825f81b01" />
+
+
+
 Aplikasi sederhana berbasis **Jetpack Compose** untuk menampilkan profil mahasiswa beserta tombol interaktif **Follow/Unfollow**.  
 Project ini dibuat sebagai latihan penggunaan state (`remember { mutableStateOf() }`) dan komponen dasar Compose seperti `Box`, `Column`, `Image`, dan `OutlinedButton`.
 
