@@ -1,6 +1,8 @@
 # 📱 ProfilApp – Jetpack Compose
 
-<img width="540" height="540" alt="mockup" src="https://github.com/user-attachments/assets/7b66610c-f28e-4a65-9397-90e0fef71988" />
+<p align="center">
+  <img width="540" height="540" alt="mockup" src="https://github.com/user-attachments/assets/7b66610c-f28e-4a65-9397-90e0fef71988" />
+</p>
 
 Aplikasi sederhana berbasis **Jetpack Compose** untuk menampilkan profil mahasiswa beserta tombol interaktif **Follow/Unfollow**.  
 Project ini dibuat sebagai latihan penggunaan state (`remember { mutableStateOf() }`) dan komponen dasar Compose seperti `Box`, `Column`, `Image`, dan `OutlinedButton`.
