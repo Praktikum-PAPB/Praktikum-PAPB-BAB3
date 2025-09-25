@@ -56,3 +56,4 @@ Project ini dibuat sebagai latihan penggunaan state (`remember { mutableStateOf(
 
 ## 📌 Kesimpulan
 Proyek ini menunjukkan bagaimana Jetpack Compose menyederhanakan pembuatan UI Android. Dengan memanfaatkan state (`remember`), aplikasi dapat menampilkan tombol **Follow/Unfollow** yang interaktif dan selalu sinkron dengan nilai state, tanpa perlu pengelolaan manual seperti pada XML tradisional.
+
