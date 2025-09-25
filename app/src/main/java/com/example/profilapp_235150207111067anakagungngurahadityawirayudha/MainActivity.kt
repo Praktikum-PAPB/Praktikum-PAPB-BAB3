@@ -53,7 +53,7 @@ class MainActivity : ComponentActivity() {
 //@Preview
 fun ProfilApp () {
     var isFollowed by remember{ mutableStateOf(false) }
-    Box(modifier = Modifier.fillMaxSize().background(Color.White), contentAlignment = Alignment.Center) {
+    Box(modifier = Modifier.fillMaxSize().background(Color.DarkGray), contentAlignment = Alignment.Center) {
         Column {
             Box(modifier = Modifier.fillMaxWidth().height(400.dp), contentAlignment = Alignment.Center){
                 Column (modifier = Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center) {
@@ -65,13 +65,13 @@ fun ProfilApp () {
                         contentScale = ContentScale.Crop
                     )
                     Spacer(modifier = Modifier.height(14.dp))
-                    Text("Anak Agung Ngurah Aditya Wirayudha", modifier = Modifier.padding(top = 14.dp))
-                    Text("235150207111067")
-                    Text("Mahasiswa Teknik Informatika")
+                    Text("Anak Agung Ngurah Aditya Wirayudha", modifier = Modifier.padding(top = 14.dp), color = Color.White)
+                    Text("235150207111067", color = Color.White)
+                    Text("Mahasiswa Teknik Informatika", color = Color.White)
                     Spacer(modifier = Modifier.height(14.dp))
                     OutlinedButton (onClick = {isFollowed = !isFollowed}) {
                         Text(if(isFollowed)"unfollow" else "follow",
-                            color = Color.Gray)
+                            color = Color.White)
                     }
                 }
             }
