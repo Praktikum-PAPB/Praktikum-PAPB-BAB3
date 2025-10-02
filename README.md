@@ -1,14 +1,10 @@
 # 📱 ProfilApp – Jetpack Compose
 
-<p align="center">
-  <img width="540" height="540" alt="mockup" src="https://github.com/user-attachments/assets/7b66610c-f28e-4a65-9397-90e0fef71988" />
-</p>
-
-<img width="536" height="805" alt="Screenshot 2025-10-02 195016" src="https://github.com/user-attachments/assets/d3f13373-164e-4c70-aaea-35efd93dd96b" />
-<img width="542" height="761" alt="Screenshot 2025-10-02 194843" src="https://github.com/user-attachments/assets/51644c1c-af42-4b9c-accb-f1a74442a1ae" />
-<img width="540" height="812" alt="Screenshot 2025-10-02 195152" src="https://github.com/user-attachments/assets/e5dcec84-32e2-4116-905b-39c0cf48ec5c" />
-
-
+<div style="display:flex; gap:12px; justify-content:center; align-items:flex-start; flex-wrap:wrap;">
+  <img src="URL_IMAGE_1" alt="screenshot1" style="max-width:32%; height:auto; border-radius:8px;" />
+  <img src="URL_IMAGE_2" alt="screenshot2" style="max-width:32%; height:auto; border-radius:8px;" />
+  <img src="URL_IMAGE_3" alt="screenshot3" style="max-width:32%; height:auto; border-radius:8px;" />
+</div>
 
 Sebuah koleksi aplikasi sederhana yang dibangun menggunakan Jetpack Compose untuk melatih dan mendemonstrasikan penggunaan state dalam berbagai skenario. Proyek ini berisi tiga aplikasi mini:
 
