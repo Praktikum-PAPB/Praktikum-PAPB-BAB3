@@ -1,10 +1,17 @@
 # 📱 ProfilApp – Jetpack Compose
 
 <div style="display:flex; gap:12px; justify-content:center; align-items:flex-start; flex-wrap:wrap;">
-  <img src="URL_IMAGE_1" alt="screenshot1" style="max-width:32%; height:auto; border-radius:8px;" />
-  <img src="URL_IMAGE_2" alt="screenshot2" style="max-width:32%; height:auto; border-radius:8px;" />
-  <img src="URL_IMAGE_3" alt="screenshot3" style="max-width:32%; height:auto; border-radius:8px;" />
+  <img src="[URL_IMAGE_1](https://github.com/user-attachments/assets/71e252c5-4396-40e4-b198-ccb23bce1480)" alt="screenshot1" style="max-width:32%; height:auto; border-radius:8px;" />
+  <img src="[URL_IMAGE_2](https://github.com/user-attachments/assets/e4962c64-cea0-41e0-8ce4-a9ef410ff101)" alt="screenshot2" style="max-width:32%; height:auto; border-radius:8px;" />
+  <img src="[URL_IMAGE_3](https://github.com/user-attachments/assets/8a7d6114-5ec8-4274-ae76-8f929655c68a)" alt="screenshot3" style="max-width:32%; height:auto; border-radius:8px;" />
 </div>
+
+
+
+<img width="536" height="805" alt="Screenshot 2025-10-02 195016" src="https://github.com/user-attachments/assets/71e252c5-4396-40e4-b198-ccb23bce1480" />
+<img width="542" height="761" alt="Screenshot 2025-10-02 194843" src="https://github.com/user-attachments/assets/e4962c64-cea0-41e0-8ce4-a9ef410ff101" />
+<img width="540" height="812" alt="Screenshot 2025-10-02 195152" src="https://github.com/user-attachments/assets/8a7d6114-5ec8-4274-ae76-8f929655c68a" />
+
 
 Sebuah koleksi aplikasi sederhana yang dibangun menggunakan Jetpack Compose untuk melatih dan mendemonstrasikan penggunaan state dalam berbagai skenario. Proyek ini berisi tiga aplikasi mini:
 
