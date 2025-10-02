@@ -50,7 +50,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-//bab 3
+//bab 3 test
 @Composable
 //@Preview
 fun ProfilApp () {
