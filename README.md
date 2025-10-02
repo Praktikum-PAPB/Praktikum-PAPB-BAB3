@@ -1,4 +1,4 @@
-# 📱 ProfilApp – Jetpack Compose
+# 📱 Jetpack Compose
 
 <img width="536" height="805" alt="Screenshot 2025-10-02 195016" src="https://github.com/user-attachments/assets/71e252c5-4396-40e4-b198-ccb23bce1480" />
 <img width="542" height="761" alt="Screenshot 2025-10-02 194843" src="https://github.com/user-attachments/assets/e4962c64-cea0-41e0-8ce4-a9ef410ff101" />
