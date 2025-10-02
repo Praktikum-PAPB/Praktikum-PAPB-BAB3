@@ -4,56 +4,81 @@
   <img width="540" height="540" alt="mockup" src="https://github.com/user-attachments/assets/7b66610c-f28e-4a65-9397-90e0fef71988" />
 </p>
 
-Aplikasi sederhana berbasis **Jetpack Compose** untuk menampilkan profil mahasiswa beserta tombol interaktif **Follow/Unfollow**.  
-Project ini dibuat sebagai latihan penggunaan state (`remember { mutableStateOf() }`) dan komponen dasar Compose seperti `Box`, `Column`, `Image`, dan `OutlinedButton`.
+Sebuah koleksi aplikasi sederhana yang dibangun menggunakan Jetpack Compose untuk melatih dan mendemonstrasikan penggunaan state dalam berbagai skenario. Proyek ini berisi tiga aplikasi mini:
+
+1. Counter App: Aplikasi penghitung angka plus-minus.
+2. Color Toggle App: Kotak yang warnanya dapat diubah dengan sekali klik.
+3. Interactive Profile App: Kartu profil mahasiswa dengan tombol Follow/Unfollow.
+
+Proyek ini bertujuan untuk memahami bagaimana remember { mutableStateOf() } digunakan untuk mengelola data numerik (Int) dan boolean (Boolean) untuk menciptakan UI yang reaktif.
 
 ---
 
 ## 🔎 Penjelasan Singkat Kode
 
 - **MainActivity**  
-  - Menggunakan `setContent { ... }` untuk memanggil fungsi `ProfilApp()` yang berisi UI berbasis Compose.  
-  - Tema aplikasi diatur melalui `ProfilApp_235150207111067AnakAgungNgurahAdityaWirayudhaTheme`.
-
-- **ProfilApp (Composable)**  
-  - Menampilkan:
-    - Foto profil (dibuat melingkar menggunakan `clip(CircleShape)`).
-    - Nama, NIM, dan jurusan mahasiswa.
-    - Tombol **Follow/Unfollow** menggunakan `OutlinedButton`.
-  - Variabel `isFollowed` didefinisikan dengan:
-    ```kotlin
-    var isFollowed by remember { mutableStateOf(false) }
+  - Berfungsi sebagai "saklar" manual untuk menampilkan salah satu dari tiga aplikasi latihan dengan mengaktifkan satu Composable pada setContent.
+  ```kotlin
+    setContent {
+        // CounterScreen()
+        // ColorToggleScreen()
+        ProfilApp()
+    }
     ```
-    Variabel ini menyimpan status follow. Nilainya akan berubah setiap kali tombol ditekan, dan teks tombol diperbarui secara otomatis antara `"follow"` dan `"unfollow"`.
 
-- **State & UI Reaktif**  
-  - Jetpack Compose bersifat **reactive**. Ketika `isFollowed` berubah, Compose akan langsung men-*render ulang* UI tombol sesuai nilai terbaru tanpa perlu kode tambahan.
+- **CounterScreen.kt (Composable)**  
+  - Tujuan: Membuat aplikasi penghitung sederhana.
+  - State: Menggunakan var count by remember `{ mutableStateOf(0) }` untuk menyimpan nilai angka (Int).
+  - Logika: Terdapat dua tombol. Satu untuk menambah nilai count, dan satu lagi untuk mengurangi nilai count dengan validasi agar angka tidak bisa kurang dari nol. Setiap perubahan pada count akan langsung memperbarui teks angka di layar.
+
+
+- **ColorToggleScreen.kt (Composable)**  
+  - Tujuan: Membuat sebuah Box yang warnanya bisa berubah saat disentuh.
+  - State: Menggunakan var isRed by remember `{ mutableStateOf(false) }` untuk menyimpan kondisi warna (Boolean).
+  - Logika: Modifier.background() pada Box akan menampilkan warna Merah jika isRed bernilai true, dan Hijau jika false. Modifier.clickable bertugas membalik nilai isRed setiap kali Box diklik, sehingga warnanya ikut berubah secara reaktif.
+
+
+- **ColorToggleScreen.kt (Composable)**
+  - Tujuan: Menampilkan kartu profil interaktif.
+  - State: Menggunakan var isFollowed by remember `{ mutableStateOf(false) }` untuk melacak status "follow" (Boolean).
+  - Logika: Status isFollowed mengontrol dua hal sekaligus:
+  1. Teks di dalam OutlinedButton ("follow" atau "unfollow").
+  2. Teks indikator di bawah tombol ("Anda Mengikuti Akun Ini" atau "Anda Belum Mengikuti Aku Ini"). Saat tombol ditekan, state berubah dan kedua elemen UI tersebut otomatis diperbarui.
+
 
 ---
 
 ## ✨ Keuntungan Jetpack Compose dibandingkan XML Layout
 
-1. **Deklaratif & Ringkas**  
-   - Compose memungkinkan kita menuliskan UI dalam bentuk fungsi Kotlin (`@Composable`) langsung.  
-   - Tidak perlu lagi file XML terpisah + class Activity yang panjang.
+1. **UI & Logika dalam Satu Tempat**  
+   - Compose: UI dan logika didefinisikan di tempat yang sama (file .kt). Variabel state (misalnya isFollowed) bisa langsung digunakan oleh Button dan Text, sehingga alur kode jelas dan ringkas.  
+   - XML: Membutuhkan dua file terpisah (.xml untuk layout dan .kt untuk logika). Kita harus menghubungkannya menggunakan findViewById atau View Binding, lalu menambahkan event listener secara manual di file Kotlin.
 
-2. **UI Reaktif**  
-   - Perubahan state (`mutableStateOf`) otomatis mengupdate tampilan UI.  
-   - Di XML, kita perlu manual memanggil `findViewById`, `setText()`, atau mengelola `Adapter`.
+2. **Pembaruan UI: Otomatis vs Manual**  
+   - Compose: Kekuatan utamanya ada di sifat reaktif. Kita hanya perlu mendeklarasikan UI berdasarkan state, misalnya:
+   ```kotlin
+   Text(if (isFollowed) "Unfollow" else "Follow")
 
-3. **Lebih Konsisten & Mudah Dibaca**  
-   - Struktur UI disusun seperti pohon fungsi (`Column`, `Row`, `Box`) sehingga alurnya lebih mudah dipahami.  
-   - Mengurangi *boilerplate code*.
+    ```
+  - XML: Menggunakan pendekatan imperatif. Kita harus memperbarui UI secara manual di dalam onClickListener.
+```kotlin
+isFollowed = !isFollowed
+    if (isFollowed) {
+        binding.followButton.text = "Unfollow"
+        binding.statusText.text = "Anda Mengikuti Akun Ini"
+    } else {
+        binding.followButton.text = "Follow"
+        binding.statusText.text = "Anda Belum Mengikuti Akun Ini"
+    }
 
-4. **Integrasi dengan Kotlin**  
-   - Karena Compose full Kotlin, kita bisa memanfaatkan fitur bahasa (lambda, extension, dsb) langsung di UI.  
-   - Tidak perlu bolak-balik antara XML & Java/Kotlin.
+  ```
 
-5. **Mudah untuk Preview**  
-   - Compose menyediakan anotasi `@Preview` untuk melihat tampilan UI tanpa harus menjalankan aplikasi di emulator/device.
+3. **Kode Lebih Ringkas & Mudah Dibaca**
+  - Compose: Tidak memerlukan View Binding atau kode pembaruan UI manual. Hasilnya, kode lebih singkat, lebih mudah dibaca, dan langsung menggambarkan tampilan yang ingin dibuat.
+  - XML: Cenderung menghasilkan boilerplate code lebih banyak, terutama untuk setup awal dan setiap interaksi yang mengubah tampilan.
+
 
 ---
 
 ## 📌 Kesimpulan
-Proyek ini menunjukkan bagaimana Jetpack Compose menyederhanakan pembuatan UI Android. Dengan memanfaatkan state (`remember`), aplikasi dapat menampilkan tombol **Follow/Unfollow** yang interaktif dan selalu sinkron dengan nilai state, tanpa perlu pengelolaan manual seperti pada XML tradisional.
-
+Proyek ini secara efektif mendemonstrasikan kekuatan dan fleksibilitas manajemen state di Jetpack Compose. Melalui tiga aplikasi sederhana—Counter, Color Toggle, dan Profil Interaktif—terlihat jelas bagaimana remember { mutableStateOf() } menjadi fondasi untuk menciptakan UI yang dinamis dan reaktif. Kita belajar bahwa state dapat dengan mudah mengelola berbagai tipe data, mulai dari angka (Int) untuk kalkulasi, kondisi visual (Boolean) untuk mengubah warna, hingga logika ganda yang memengaruhi beberapa elemen UI sekaligus. Semua interaksi ini dicapai dengan kode yang jauh lebih ringkas dan intuitif, menghilangkan kebutuhan untuk manipulasi View secara manual yang kompleks seperti pada sistem XML tradisional.
