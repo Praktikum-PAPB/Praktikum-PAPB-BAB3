@@ -61,17 +61,16 @@ Proyek ini bertujuan untuk memahami bagaimana remember { mutableStateOf() } digu
 
     ```
   - XML: Menggunakan pendekatan imperatif. Kita harus memperbarui UI secara manual di dalam onClickListener.
-```kotlin
-isFollowed = !isFollowed
-    if (isFollowed) {
+    ```kotlin
+    isFollowed = !isFollowed
+      if (isFollowed) {
         binding.followButton.text = "Unfollow"
         binding.statusText.text = "Anda Mengikuti Akun Ini"
-    } else {
+      } else {
         binding.followButton.text = "Follow"
         binding.statusText.text = "Anda Belum Mengikuti Akun Ini"
-    }
-
-  ```
+      }
+    ```
 
 3. **Kode Lebih Ringkas & Mudah Dibaca**
   - Compose: Tidak memerlukan View Binding atau kode pembaruan UI manual. Hasilnya, kode lebih singkat, lebih mudah dibaca, dan langsung menggambarkan tampilan yang ingin dibuat.
