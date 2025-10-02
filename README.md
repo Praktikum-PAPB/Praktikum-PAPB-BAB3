@@ -4,6 +4,12 @@
   <img width="540" height="540" alt="mockup" src="https://github.com/user-attachments/assets/7b66610c-f28e-4a65-9397-90e0fef71988" />
 </p>
 
+<img width="536" height="805" alt="Screenshot 2025-10-02 195016" src="https://github.com/user-attachments/assets/d3f13373-164e-4c70-aaea-35efd93dd96b" />
+<img width="542" height="761" alt="Screenshot 2025-10-02 194843" src="https://github.com/user-attachments/assets/51644c1c-af42-4b9c-accb-f1a74442a1ae" />
+<img width="540" height="812" alt="Screenshot 2025-10-02 195152" src="https://github.com/user-attachments/assets/e5dcec84-32e2-4116-905b-39c0cf48ec5c" />
+
+
+
 Sebuah koleksi aplikasi sederhana yang dibangun menggunakan Jetpack Compose untuk melatih dan mendemonstrasikan penggunaan state dalam berbagai skenario. Proyek ini berisi tiga aplikasi mini:
 
 1. Counter App: Aplikasi penghitung angka plus-minus.
@@ -42,7 +48,7 @@ Proyek ini bertujuan untuk memahami bagaimana remember { mutableStateOf() } digu
   - Tujuan: Menampilkan kartu profil interaktif.
   - State: Menggunakan var isFollowed by remember `{ mutableStateOf(false) }` untuk melacak status "follow" (Boolean).
   - Logika: Status isFollowed mengontrol dua hal sekaligus:
-  1. Teks di dalam OutlinedButton ("follow" atau "unfollow").
+    1. Teks di dalam OutlinedButton ("follow" atau "unfollow").
   2. Teks indikator di bawah tombol ("Anda Mengikuti Akun Ini" atau "Anda Belum Mengikuti Aku Ini"). Saat tombol ditekan, state berubah dan kedua elemen UI tersebut otomatis diperbarui.
 
 
